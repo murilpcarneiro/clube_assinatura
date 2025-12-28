@@ -1,0 +1,122 @@
+.hero-main {
+  background-image: url('../assets/images/hero-background.png');
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+
+  & .button {
+    background-color: var(--pink-dark);
+    padding: 10px 20px;
+    border-radius: 5px;
+
+    & a {
+      font-size: 14px;
+      color: var(--text-title);
+      text-decoration: none;
+      font-weight: 700;
+    }
+  }
+}
+
+.title {
+  text-align: center;
+  padding: 48px 20px 193px 20px;
+
+  & h1 {
+    font-size: 28px;
+    color: var(--text-title);
+    margin-bottom: 16px;
+  }
+
+  & p {
+    font-size: 14px;
+    color: var(--text-label);
+    line-height: 1.4;
+  }
+}
+
+.hero-mystery {
+  padding: 82px 20px;
+  position: relative;
+
+  & img {
+    width: 40px;
+    position: absolute;
+    opacity: 0;
+    scale: 0;
+    transition: scale 0.2s linear, opacity 0s 0.2s linear;
+
+    &:nth-child(1) {
+      top: 28px;
+      left: 252px;
+      transform: rotate(15deg);
+    }
+
+    &:nth-child(2) {
+      top: 157px;
+      left: 14px;
+      transform: rotate(-30deg);
+    }
+
+    &:nth-child(3) {
+      bottom: 32px;
+      right: 20px;
+      transform: rotate(15deg);
+    }
+  }
+
+  &:hover img {
+    opacity: 1;
+    scale: 1;
+
+    &:nth-child(1) {
+      transition: opacity 0.4s linear, scale 0.1s linear;
+    }
+
+    &:nth-child(2) {
+      transition: opacity 0.4s 0.5s linear, scale 0.1s 0.5s linear;
+    }
+
+    &:nth-child(3) {
+      transition: opacity 0.4s 1s linear, scale 0.1s 1s linear;
+    }
+  }
+
+  &:hover p span {
+    opacity: 1;
+
+    &:nth-child(1) {
+      transition: opacity 0.4s linear;
+    }
+
+    &:nth-child(2) {
+      transition: opacity 0.4s 0.5s linear;
+    }
+
+    &:nth-child(3) {
+      transition: opacity 0.4s 1s linear;
+    }
+  }
+
+  & p {
+    font-size: 16px;
+    color: var(--text-body);
+    text-align: center;
+
+    & span {
+      opacity: 0.5;
+
+      & strong {
+        color: var(--blue-light);
+      }
+    }
+  }
+}
