@@ -1,0 +1,340 @@
+#price {
+  background: url(../assets/images/pricing-background.png) no-repeat
+    center/cover;
+  padding-top: 8rem;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    left: 8rem;
+    border-radius: 5rem;
+    background: #000f1f;
+    z-index: -1;
+    filter: blur(200px);
+  }
+
+  & h1 {
+    z-index: 1;
+    text-align: center;
+    margin-inline: auto;
+    max-width: var(--max-width);
+    color: var(--text-body);
+    font: 600 1.5rem/1 var(--font-family);
+    margin-bottom: 3rem;
+  }
+
+  & h1 + div {
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    margin-inline: auto;
+    max-width: var(--max-width);
+    flex-direction: column;
+
+    & img[src*='star'] {
+      transition: rotate 500ms;
+    }
+
+    & div:nth-child(2) {
+      border-color: var(--shape-hover);
+      background-color: var(--shape-hover);
+      & .flex {
+        justify-content: space-between;
+
+        & span:nth-child(1) {
+          color: var(--pink-light);
+        }
+
+        & b {
+          border-radius: 999px;
+          text-align: center;
+          padding: 0.5rem 1.25rem;
+          background-color: var(--shape-stroke);
+          color: var(--text-body);
+          font-size: 0.625rem;
+          font-weight: 600;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+        }
+      }
+
+      & ul[role='list'] {
+        margin-top: 3rem;
+      }
+
+      & a {
+        text-wrap: nowrap;
+        background-color: var(--pink-dark);
+        &::before {
+          background-color: var(--pink-base);
+        }
+      }
+    }
+
+    & div:nth-child(3) {
+      & ul[role='list'] {
+        margin-top: 2rem;
+      }
+    }
+
+    & .card {
+      border: 1px solid var(--shape-stroke);
+      display: grid;
+      border-radius: 1.5rem;
+      width: 17rem;
+      height: 25rem;
+      background-color: var(--shape-base);
+      padding: 2rem;
+      font-family: var(--font-family);
+      transition: scale 600ms ease, background-color 500ms ease;
+      & span:nth-child(1) {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--blue-light);
+      }
+
+      & h2 {
+        margin-block: 1.5rem 0.5rem;
+        color: var(--text-title);
+        font-weight: 600;
+        font-size: 2.5rem;
+
+        & small {
+          font-size: 1.25rem;
+        }
+      }
+
+      & h2 + span {
+        color: var(--text-label);
+        opacity: 0.9;
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 1.4;
+      }
+
+      & ul[role='list'] {
+        margin-block: 5rem 1.5rem;
+        display: grid;
+        gap: 0.75rem;
+        & li {
+          text-wrap: nowrap;
+          display: flex;
+          align-items: center;
+          color: var(--text-label);
+          font-weight: 400;
+          font-size: 0.75rem;
+          line-height: 1.4;
+          gap: 0.5rem;
+          & img {
+            aspect-ratio: 1;
+            width: 0.75rem;
+          }
+        }
+      }
+
+      & a {
+        max-width: 13rem;
+        text-wrap: nowrap;
+        position: relative;
+        border-radius: 0.5rem;
+        background-color: var(--blue-dark);
+        padding: 0.75rem;
+        text-align: center;
+        color: var(--text-title);
+        font-weight: 600;
+        font-size: 0.875rem;
+        z-index: 1;
+
+        &::before {
+          content: '';
+          position: absolute;
+          background-color: var(--blue-mid);
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          border-radius: inherit;
+          z-index: -1;
+          clip-path: circle(0%);
+          transition: clip-path 400ms ease;
+        }
+
+        &:hover::before {
+          clip-path: circle(100%);
+        }
+      }
+
+      &:hover {
+        scale: 1.05;
+        background-color: var(--shape-hover);
+        z-index: 2;
+
+        & img[src*='star'] {
+          rotate: 30deg;
+        }
+      }
+    }
+  }
+}
+
+@media (width >= 64em) {
+  #price {
+    & h1 {
+      font-size: 2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    & h1 + div {
+      max-width: var(--max-width);
+      margin-inline: auto;
+      padding-block: 5rem 8rem;
+      justify-content: center;
+      margin-inline: auto;
+      overflow: hidden;
+      flex-direction: row;
+
+      & img[src*='star'] {
+        aspect-ratio: 1;
+        width: 1.5rem;
+      }
+
+      & img + img[src*='star'] {
+        width: 0.875rem;
+      }
+
+      & .card {
+        width: 18rem;
+        height: 26rem;
+
+        & h2 + span {
+          line-height: 100%;
+        }
+        & a {
+          max-width: 14rem;
+        }
+        &:nth-child(1) {
+          rotate: -8deg;
+          transform: translate(0.25rem, 2.5rem);
+          z-index: 0;
+          position: relative;
+          & .s1 {
+            position: absolute;
+            top: -1rem;
+            left: -1.5rem;
+          }
+          & .s2 {
+            position: absolute;
+            left: -2rem;
+            top: 1rem;
+          }
+        }
+
+        &:nth-child(2) {
+          z-index: 1;
+          position: relative;
+          & .rbbt {
+            position: absolute;
+            top: -3.25rem;
+            left: 2rem;
+          }
+        }
+
+        &:nth-child(3) {
+          rotate: 8deg;
+          transform: translate(-0.25rem, 2.5rem);
+          z-index: 0;
+          position: relative;
+          & .s3 {
+            position: absolute;
+            bottom: -1.5rem;
+            right: -1.5rem;
+          }
+
+          & .s4 {
+            position: absolute;
+            right: 0.5rem;
+            bottom: -2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (750px <= width < 64em) {
+  #price {
+    & h1 {
+      font-size: 2rem;
+      margin-bottom: 5.5rem;
+    }
+
+    & img[src*='star'] {
+      aspect-ratio: 1;
+      width: 1.5rem;
+    }
+
+    & img + img[src*='star'] {
+      width: 0.875rem;
+    }
+
+    & h1 + div {
+      justify-content: center;
+      gap: 2rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+      & .card {
+        width: 18rem;
+        height: 26rem;
+
+        & h2 + span {
+          line-height: 100%;
+        }
+        & a {
+          max-width: 14rem;
+        }
+        &:nth-child(1) {
+          z-index: 0;
+          position: relative;
+          & .s1 {
+            position: absolute;
+            top: -1rem;
+            left: -1.5rem;
+          }
+          & .s2 {
+            position: absolute;
+            left: -2rem;
+            top: 1rem;
+          }
+        }
+
+        &:nth-child(2) {
+          z-index: 1;
+          position: relative;
+          & .rbbt {
+            position: absolute;
+            top: -3.25rem;
+            left: 2rem;
+          }
+        }
+
+        &:nth-child(3) {
+          z-index: 0;
+          position: relative;
+          & .s3 {
+            position: absolute;
+            bottom: -1.5rem;
+            right: -1.5rem;
+          }
+
+          & .s4 {
+            position: absolute;
+            right: 0.5rem;
+            bottom: -2rem;
+          }
+        }
+      }
+    }
+  }
+}
