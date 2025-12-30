@@ -48,8 +48,8 @@ Landing page do clube de assinatura literario Encantos Literarios. A pagina dest
 
 ## Recursos
 
-- LP de Clube de Assinatura (layout estatico) — Figma
-- Protótipo animado — Figma
+- LP de Clube de Assinatura (layout estatico) — [Figma](https://www.figma.com/community/file/1394686421442995256)
+- Prototipo animado — [Figma](https://www.figma.com/community/file/1394686421442995256)
 
 ## Requisitos atendidos
 
